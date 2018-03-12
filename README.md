@@ -3,7 +3,7 @@ Self-Driving Car Engineer Nanodegree Program - PID Controller
 
 ---
 ## Introduction
-The purpose of this project was to drive the car arouund the track in the simulator by building a PID controller and tune the "P(propotional)", "I(Integral)" and "D(differential)" parameters by applying the general processing flow as described in the lessons. The simulator provides cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle.
+The purpose of this project was to drive the car arouund the track in the simulator, by building a PID controller and tune the "P(propotional)", "I(Integral)" and "D(differential)" parameters by applying the general processing flow as described in the lessons. The simulator provides cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle.
 
 ---
 
@@ -16,8 +16,8 @@ The purpose of this project was to drive the car arouund the track in the simula
 Fianl Video ![Link to the Video](./videos/PID_complete.mov)
 
 #### Describe how the final hyperparameters were chosen.
-Parameters were chosen manually by trial and error. First, I started with all zero's to the 3 parameters, Car seems to go out of track immediately. To fix it I added the proportional parameter alone, car seems to drive properly initially but starts overshooting and go out of the track eventially. I added the differential to try to overcome the overshooting. As the car drove in simulator and there was no bias in the simulator the  integral part stayed as zero. After the car drove the track without going out of it, the parameters increased to minimize the average cross-track error on a single track lap. 
-
+PID parameters were chosen manually by trial and error.As a first step I set the 3 parametrs to zero but the car seems to go out of track immediately. To fix this problem, I added the proportional parameter. Initially with the  P term the car seems to drive properly but eventually started to overshoot and went out of the track. To fix it, I added the differential term to overcome the overshooting. As the car drove in simulator and there was no bias in the simulator, the  integral part stayed as zero. As the car drove in the track, the parameters were tuned to minimize the average cross-track error on a single track lap. 
+---
 ## Dependencies
 
 * cmake >= 3.5
