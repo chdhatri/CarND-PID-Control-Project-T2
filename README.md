@@ -17,7 +17,7 @@ Fianl Video ![Link to the Video](./videos/PID_complete.mov)
 
 #### Describe how the final hyperparameters were chosen.
 PID parameters were chosen manually by trial and error.As a first step I set the 3 parametrs to zero but the car seems to go out of track immediately. To fix this problem, I added the proportional parameter. Initially with the  P term the car seems to drive properly but eventually started to overshoot and went out of the track. To fix it, I added the differential term to overcome the overshooting. As the car drove in simulator and there was no bias in the simulator, the  integral part stayed as zero. As the car drove in the track, the parameters were tuned to minimize the average cross-track error on a single track lap. 
----
+
 ## Dependencies
 
 * cmake >= 3.5
