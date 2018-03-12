@@ -9,11 +9,11 @@ The purpose of this project was to drive the car arouund the track in the simula
 
 ## Reflection
 #### Describe the effect each of the P, I, D components had in your implementation.
-* Proportional (P) : Steer the car propotional to the distance from the lane center which is Cross track Error (CTE). Below is the video with just P term. ![Link to the Video](./videos/PID_onlyP.mov)
-* Differential (D) : With Just propotional control, car can start oveshooting once it reaches center line. To avoid this we use the differntial control. It helps in approaching the target trajectory smoothly by setting a properly tuned D parameter. Below is the video with just D term. ![Link to the Video](./videos/PID_onlyD.mov)
-* Integral (I) : Environmental factors and mechinaical behaviour of the car (bias) can effect the nominal behaviour of the car. This can be corrected by using Intergral Control which sums up all the CTE ever observed. It counteracts a bias in the CTE which prevents P-D to reach center. ![Link to the Video](./videos/PID_onlyI.mov)
+* Proportional (P) : Steer the car propotional to the distance from the lane center which is Cross track Error (CTE). Below is the video with just P term. [Link to only P](https://youtu.be/9tAOb5RTEls)
+* Differential (D) : With Just propotional control, car can start oveshooting once it reaches center line. To avoid this we use the differntial control. It helps in approaching the target trajectory smoothly by setting a properly tuned D parameter. Below is the video with just D term. ![Link to only D](https://youtu.be/y5nkP6BXiCg)
+* Integral (I) : Environmental factors and mechinaical behaviour of the car (bias) can effect the nominal behaviour of the car. This can be corrected by using Intergral Control which sums up all the CTE ever observed. It counteracts a bias in the CTE which prevents P-D to reach center. ![Link to only I](https://youtu.be/l2BR_SKRhHs)
 
-Fianl Video ![Link to the Video](./videos/PID_complete.mov)
+Fianl Video ![Link to complete PID Video](https://youtu.be/i0qiKZ9lopY)
 
 #### Describe how the final hyperparameters were chosen.
 PID parameters were chosen manually by trial and error.As a first step I set the 3 parametrs to zero but the car seems to go out of track immediately. To fix this problem, I added the proportional parameter. Initially with the  P term the car seems to drive properly but eventually started to overshoot and went out of the track. To fix it, I added the differential term to overcome the overshooting. As the car drove in simulator and there was no bias in the simulator, the  integral part stayed as zero. As the car drove in the track, the parameters were tuned to minimize the average cross-track error on a single track lap. 
