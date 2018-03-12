@@ -9,9 +9,11 @@ The purpose of this project was to drive the car arouund the track in the simula
 
 ## Reflection
 #### Describe the effect each of the P, I, D components had in your implementation.
-* Proportional (P) : Steer the car propotional to the distance from the lane center which is Cross track Error (CTE). Below is the video with just P term. 
-* Differential (D) : With Just propotional control, car can start oveshooting once it reaches center line. To avoid this we use the differntial control. It helps in approaching the target trajectory smoothly by setting a properly tuned D parameter. Below is the video with just D term
-* Integral (I) : Environmental factors and mechinaical behaviour of the car (bias) can effect the nominal behaviour of the car. This can be corrected by using Intergral Control which sums up all the CTE ever observed. It counteracts a bias in the CTE which prevents P-D to reach center.
+* Proportional (P) : Steer the car propotional to the distance from the lane center which is Cross track Error (CTE). Below is the video with just P term. ![Link to the Video](./videos/PID_onlyP.mov)
+* Differential (D) : With Just propotional control, car can start oveshooting once it reaches center line. To avoid this we use the differntial control. It helps in approaching the target trajectory smoothly by setting a properly tuned D parameter. Below is the video with just D term. ![Link to the Video](./videos/PID_onlyD.mov)
+* Integral (I) : Environmental factors and mechinaical behaviour of the car (bias) can effect the nominal behaviour of the car. This can be corrected by using Intergral Control which sums up all the CTE ever observed. It counteracts a bias in the CTE which prevents P-D to reach center. ![Link to the Video](./videos/PID_onlyI.mov)
+
+Fianl Video ![Link to the Video](./videos/PID_complete.mov)
 
 #### Describe how the final hyperparameters were chosen.
 Parameters were chosen manually by trial and error. First, I started with all zero's to the 3 parameters, Car seems to go out of track immediately. To fix it I added the proportional parameter alone, car seems to drive properly initially but starts overshooting and go out of the track eventially. I added the differential to try to overcome the overshooting. As the car drove in simulator and there was no bias in the simulator the  integral part stayed as zero. After the car drove the track without going out of it, the parameters increased to minimize the average cross-track error on a single track lap. 
